@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 
 @Component({
   selector: 'app-grafico-barra-horizontal',
@@ -7,24 +7,27 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class GraficoBarraHorizontalComponent implements OnDestroy  {
 
-  results: any[]=[
-    {
-      "name": "JuegoNAme 1",
-      "value": 80
-    },
-    {
-      "name": "JuegoNAme 2",
-      "value": 50
-    },
-    {
-      "name": "JuegoNAme 3",
-      "value": 70
-    },
-    {
-      "name": "JuegoNAme 4",
-      "value": 80
-    },
-  ]
+  @Input() results: any[] =[]
+
+//datos de prueba
+  // results: any[]=[
+  //   {
+  //     "name": "JuegoNAme 1",
+  //     "value": 80
+  //   },
+  //   {
+  //     "name": "JuegoNAme 2",
+  //     "value": 50
+  //   },
+  //   {
+  //     "name": "JuegoNAme 3",
+  //     "value": 70
+  //   },
+  //   {
+  //     "name": "JuegoNAme 4",
+  //     "value": 80
+  //   },
+  // ]
 
   // options
   showXAxis = true;
@@ -37,12 +40,12 @@ export class GraficoBarraHorizontalComponent implements OnDestroy  {
   yAxisLabel = 'votos';
 
   colorScheme = 'nightLights';
-  // intervalo;
+  // intervalo;//datos de prueba
 
 
 
   constructor() {
-
+//datos de prueba
     // console.log(Math.round(Math.random() * 500));
 
     // this.intervalo = setInterval(()=>{

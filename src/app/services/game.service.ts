@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { catchError, of, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Game } from '../interfaces/interfaces';
+import { map } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,8 @@ export class GameService {
   private juegos:Game[] =[];
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private db: AngularFirestore
   ) { }
 
   getNominados(){
@@ -40,6 +43,18 @@ export class GameService {
       })
     );
 
+  }
+
+  getDataToBar(){
+    // this.db.collection('goty').valueChanges()
+    //   .pipe(
+    //         //transformar respuesta del backend a los datos que necesitamos
+    //     // map( (resp: Game) => resp.map( ({ name, votos }) => ({ name, value: votos }) ))
+
+    //   )
+    //   .subscribe( juegos => {
+    //     this.juegos = juegos;
+    //   });
   }
 
 
